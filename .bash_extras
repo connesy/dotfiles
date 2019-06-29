@@ -1,0 +1,42 @@
+# Try to load git __git_ps1 if possible
+if [ -f /usr/share/git-core/contrib/completion/git-prompt.sh  ]; then
+    source /usr/share/git-core/contrib/completion/git-prompt.sh
+fi
+
+# Set up the prompt with GIT niceness if available
+if [ "$TERM" != "dumb" ]; then
+    if hash __git_ps1 &> /dev/null; then
+        # Show the git branch if possible
+        GIT_PS1_SHOWDIRTYSTATE=1
+        GIT_PS1_SHOWCOLORHINTS=1
+        GIT_PS1_SHOWUPSTREAM="auto"
+
+        # With timestamp
+        PS1="\[\033[01;33m\][\A]\[\033[01;32m\]\u@\[\033[01;33m\]\h\\[\033[32m\]\[\033[00m\] \[\033[01;34m\]\w\[\033[00m\] \[\033[01;35m\]\$(__git_ps1 '(%s)')\[\033[00m\]$ "
+
+        # Without timestamp
+        #PS1="\[\033[01;32m\]\u@\[\033[01;33m\]\h\\[\033[32m\] \[\033[01;34m\]\w\[\033[00m\] \[\033[01;35m\]\$(__git_ps1 '(%s)')\[\033[00m\]$ "
+    else
+        # With timestamp
+        PS1="\[\033[01;33m\][\A]\[\033[01;32m\]\u@\[\033[01;33m\]\h\\[\033[32m\]\[\033[00m\] \[\033[01;34m\]\w\[\033[00m\] $ "
+
+        # Without timestamp
+        #PS1="\[\033[01;32m\]\u@\[\033[01;33m\]\h\\[\033[32m\] \[\033[01;34m\]\w\[\033[00m\] \[\033[00m\]$ "
+
+    fi
+
+    # Hack to support Mac not having dircolors
+        if dircolors 1> /dev/null 2>&1; then
+        eval "`dircolors -b`"
+        alias ls='ls --color=auto --hide=*~' # Hide the annoying tmp files from emacs users.
+    else
+        export CLICOLOR=1
+        export LSCOLORS=GxFxCxDxBxegedabagaced
+    fi
+fi
+
+# If cd'ing to a file, cd to its directory instead
+function cd() { if [ $# -ne 1 ] || [ "$1" = "-" ]; then command cd "$@"; return; fi; if [ -f "$1" ] && [ -d $(dirname "$1") ]; then command cd $(dirname "$1"); else command cd "$1"; fi; }
+
+# Set environmental variable for atom:sync-settings package
+export GIST_ID='3354e3d6197a61a06bdb7ad320bcb8ac'
