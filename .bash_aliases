@@ -25,3 +25,5 @@ alias gitpurge_deleted_branches="git fetch --all -p; git branch -vv | grep ': go
 alias gitpurge_deleted_branches_force="git fetch --all -p; git branch -vv | grep ': gone]' | awk '{ print \$1 }' | xargs -n 1 git branch -D"
 alias gitpurge_deleted_branches_dry="git fetch --all -p; git branch -vv | grep ': gone]'"
 
+alias get_pod='kubectl get pods | grep data-quality | while read a b; do echo "$a"; done'
+alias kube_start='kubectl exec -it "$(get_pod)" bash'

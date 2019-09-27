@@ -18,10 +18,11 @@
 # Aliases 
 [alias]
 	ci = commit
-	co = checkout
 	br = branch
 	st = status
-    last = log -10 --graph
+	sw = switch
+	re = restore
+	last = log -10 --graph
 
 # Using meld as diff and merge tool
 [diff]
