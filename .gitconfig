@@ -1,13 +1,13 @@
 [user]
-	email = connesy@gmail.com
-	name = Stefan Hasselgren
-	signingkey = A7BB11AABE01D45A
+    email = connesy@gmail.com
+    name = Stefan Hasselgren
+	signingKey = A7BB11AABE01D45A
 
 # General setup
 [credential]
-	helper = cache --timeout 36000
+    helper = cache --timeout 36000
 [push]
-	default = matching
+    default = matching
 
 # Setup nice log output
 [log]
@@ -17,12 +17,12 @@
 
 # Aliases 
 [alias]
-	ci = commit
-	br = branch
-	st = status
-	sw = switch
-	re = restore
-	last = log -10 --graph
+    ci = commit
+    br = branch
+    st = status
+    sw = switch
+    re = restore
+    last = log -10 --graph
 
 # Using meld as diff and merge tool
 [diff]
@@ -41,6 +41,8 @@
     cmd = meld "$LOCAL" "$MERGED" "$REMOTE" --output "$MERGED"
 
 [core]
-	autocrlf = input
+    autocrlf = input
 [commit]
-	gpgSign = true
+	gpgsign = true
+[gpg]
+	program = gpg2

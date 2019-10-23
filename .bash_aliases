@@ -2,10 +2,13 @@
 
 alias l="ls -lh"
 alias ldir='ll -d */'
-alias cc="conda activate cc"
 alias calc="bc"
 alias calculator="bc"
 
+# Conda aliases
+alias cc="conda activate cc"
+alias dev="conda activate dev"
+alias prod="conda activate prod"
 
 # View size of folder
 alias d='du -sch * | sort -h'
