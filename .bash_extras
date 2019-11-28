@@ -40,3 +40,9 @@ function cd() { if [ $# -ne 1 ] || [ "$1" = "-" ]; then command cd "$@"; return;
 
 # Set environmental variable for atom:sync-settings package
 export GIST_ID='3354e3d6197a61a06bdb7ad320bcb8ac'
+
+
+profile() {
+    local arg1=$1;
+    python -m cProfile -o "$arg1.prof" $arg1;
+}
