@@ -1,7 +1,12 @@
 #!/bin/bash
 
 alias l="ls -lh"
+# Only show directories
 alias ldir='ll -d */'
+# Sort by modified time DESC
+alias lt='ll -t'
+
+# bash calculator
 alias calc="bc"
 alias calculator="bc"
 
@@ -34,4 +39,7 @@ alias kube_start='kubectl exec -it "$(get_pod)" bash'
 alias mysql_start='mysqld_safe &'
 
 # Remove mysql caches before running npm test
-alias npm_test='rm -r ~/connectedcars/data/mysqldata/ ~/connectedcars/data/mysqldata-context/; npm test'
+alias npm_test='rm -r ~/connectedcars/data/mysqldata/ ~/connectedcars/data/mysqldata-context/; ( cd ~/connectedcars/data/migrations; npm test )'
+
+# Show info about the computer
+alias about="inxi -F"
