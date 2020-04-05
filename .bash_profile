@@ -2,4 +2,5 @@
 # This enable CTRL+S to move in the other direction through reverse-i-search (aka CTRL+R)#!/bin/bash
 stty -ixon
 
-
+# Run local mysql server on startup
+mysql_start
