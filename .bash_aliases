@@ -33,9 +33,11 @@ alias gitpurge_deleted_branches="git fetch --all -p; git branch -vv | grep ': go
 alias gitpurge_deleted_branches_force="git fetch --all -p; git branch -vv | grep ': gone]' | awk '{ print \$1 }' | xargs -n 1 git branch -D"
 alias gitpurge_deleted_branches_dry="git fetch --all -p; git branch -vv | grep ': gone]'"
 
+# Aliases to get google cloud kubectl pod names and start a terminal in the current kubectl pod
 alias get_pod='kubectl get pods | grep data-quality | while read a b; do echo "$a"; done'
 alias kube_start='kubectl exec -it "$(get_pod)" bash'
 
+# Start lcoal MySQL server
 alias mysql_start='mysqld_safe &'
 
 # Remove mysql caches before running npm test
@@ -43,3 +45,16 @@ alias npm_test='rm -r ~/connectedcars/data/mysqldata/ ~/connectedcars/data/mysql
 
 # Show info about the computer
 alias about="inxi -F"
+
+# Add python migration script as alias
+alias migrate="python ~/connectedcars/data-quality/src/run_table_migrations.py"
+
+# Add aliases to control blinkstick
+alias bsg="blinkstick --set-color green"
+alias bsr="blinkstick --set-color red"
+alias bso="blinkstick --set-color off"
+
+# When bluetooth headset can't connect, run this and try again
+alias bluetooth_fix="killall pulseaudio"
+
+alias pudb="pudb3"
