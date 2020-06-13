@@ -1,15 +1,48 @@
 #!/bin/bash
 
-ln -s ~/dotfiles/.bash_aliases ~/.bash_aliases;
-ln -s ~/dotfiles/.bash_extras ~/.bash_extras;
-ln -s ~/dotfiles/.bash_profile ~/.bash_profile;
-ln -s ~/dotfiles/.bash_setup ~/.bash_setup;
-ln -s ~/private-dotfiles/.bash_cc ~/.bash_cc;
+if [ ! -L ~/.bash_aliases ]; then
+  ln -s ~/dotfiles/.bash_aliases ~/.bash_aliases;
+fi
 
-ln -s ~/dotfiles/.gitconfig ~/.gitconfig;
-ln -s ~/dotfiles/.condarc ~/.condarc;
-ln -s ~/dotfiles/.noserc ~/.noserc;
-ln -s ~/dotfiles/.screenrc ~/.screenrc;
-ln -s ~/dotfiles/easy_extraction ~/easy_extraction;
-ln -s ~/dotfiles/setup.cfg ~/setup.cfg;
+if [ ! -L ~/.bash_extras ]; then
+  ln -s ~/dotfiles/.bash_extras ~/.bash_extras;
+fi
+
+if [ ! -L ~/.bash_profile ]; then
+  ln -s ~/dotfiles/.bash_profile ~/.bash_profile;
+fi
+
+if [ ! -L ~/.bash_setup ]; then
+  ln -s ~/dotfiles/.bash_setup ~/.bash_setup;
+fi
+
+if [ ! -L ~/.bash_cc ]; then
+  ln -s ~/private-dotfiles/.bash_cc ~/.bash_cc;
+fi
+
+if [ ! -L ~/.gitconfig ]; then
+  ln -s ~/dotfiles/.gitconfig ~/.gitconfig;
+fi
+
+if [ ! -L ~/.condarc ]; then
+  ln -s ~/dotfiles/.condarc ~/.condarc;
+fi
+
+if [ ! -L ~/.noserc ]; then
+  ln -s ~/dotfiles/.noserc ~/.noserc;
+fi
+
+if [ ! -L ~/.screenrc ]; then
+  ln -s ~/dotfiles/.screenrc ~/.screenrc;
+fi
+
+if [ ! -L ~/easy_extraction ]; then
+  ln -s ~/dotfiles/easy_extraction ~/easy_extraction;
+fi
+
+if [ ! -L ~/setup.cfg ]; then
+  ln -s ~/dotfiles/setup.cfg ~/setup.cfg;
+fi
+
+
 
