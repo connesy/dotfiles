@@ -6,6 +6,7 @@ ln -s ~/dotfiles/.bash_profile ~/.bash_profile;
 ln -s ~/dotfiles/.bash_setup ~/.bash_setup;
 ln -s ~/private-dotfiles/.bash_cc ~/.bash_cc;
 
+ln -s ~/dotfiles/.gitconfig ~/.gitconfig;
 ln -s ~/dotfiles/.condarc ~/.condarc;
 ln -s ~/dotfiles/.noserc ~/.noserc;
 ln -s ~/dotfiles/.sreenrc ~/.screenrc;
