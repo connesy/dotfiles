@@ -9,7 +9,7 @@ ln -s ~/private-dotfiles/.bash_cc ~/.bash_cc;
 ln -s ~/dotfiles/.gitconfig ~/.gitconfig;
 ln -s ~/dotfiles/.condarc ~/.condarc;
 ln -s ~/dotfiles/.noserc ~/.noserc;
-ln -s ~/dotfiles/.sreenrc ~/.screenrc;
+ln -s ~/dotfiles/.screenrc ~/.screenrc;
 ln -s ~/dotfiles/easy_extraction ~/easy_extraction;
-ln -s ~/dotfiles/setup.cnf ~/setup.cnf;
+ln -s ~/dotfiles/setup.cfg ~/setup.cfg;
 
