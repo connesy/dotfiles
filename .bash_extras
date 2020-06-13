@@ -46,3 +46,6 @@ profile() {
     local arg1=$1;
     python -m cProfile -o "$arg1.prof" $arg1;
 }
+
+# Set breakpoint() in Python to call pudb
+export PYTHONBREAKPOINT="pudb.set_trace"
