@@ -20,6 +20,10 @@ if [ ! -L ~/.bash_cc ]; then
   ln -s ~/private-dotfiles/.bash_cc ~/.bash_cc;
 fi
 
+if [ ! -L ~/.envFile ]; then
+  ln -s ~/private-dotfiles/.envFile ~/.envFile;
+fi
+
 if [ ! -L ~/.gitconfig ]; then
   ln -s ~/dotfiles/.gitconfig ~/.gitconfig;
 fi
