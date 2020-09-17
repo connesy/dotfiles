@@ -34,7 +34,7 @@ alias gitpurge_deleted_branches_force="git fetch --all -p; git branch -vv | \gre
 alias gitpurge_deleted_branches_dry="git fetch --all -p; git branch -vv | \grep ': gone]'"
 
 # Aliases to get google cloud kubectl pod names and start a terminal in the current kubectl pod
-alias get_pod='kubectl get pods | \grep data-quality | while read a b c d; do if [[ $c = "Running" ]]; then echo "$a"; fi; done'
+alias get_pod='kubectl get pods | \grep data-quality | \grep -v data-quality-v2 | while read a b c d; do if [[ $c = "Running" ]]; then echo "$a"; fi; done'
 alias kube_start='kubectl exec -it "$(get_pod)" -- bash'
 
 # Start lcoal MySQL server
