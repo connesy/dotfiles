@@ -49,3 +49,6 @@ profile() {
 
 # Set breakpoint() in Python to call pudb
 export PYTHONBREAKPOINT="pudb.set_trace"
+
+# On the datascience VM, gpg cannot use UI to ask for the password, so we need it to ask in the terminal
+export GPG_TTY=$(tty)
