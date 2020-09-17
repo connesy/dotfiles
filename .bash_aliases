@@ -37,6 +37,9 @@ alias gitpurge_deleted_branches_dry="git fetch --all -p; git branch -vv | \grep 
 alias get_pod='kubectl get pods | \grep data-quality | \grep -v data-quality-v2 | while read a b c d; do if [[ $c = "Running" ]]; then echo "$a"; fi; done'
 alias kube_start='kubectl exec -it "$(get_pod)" -- bash'
 
+# Alias to ssh into datascience vm using external IP address
+alias get_vm_ip='gcloud compute instances list | \grep datascience | while read name zone type internal external status; do echo "$external"; done'
+
 # Start lcoal MySQL server
 alias mysql_start='mysqld_safe &'
 
