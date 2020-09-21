@@ -3,8 +3,8 @@
 alias l="ls -lh"
 # Only show directories
 alias ldir='ll -d */'
-# Sort by modified time DESC
-alias lt='ll -t'
+# Sort by modified time, oldest first
+alias lt='ll -tr'
 
 # bash calculator
 alias calc="bc"
