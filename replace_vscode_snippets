@@ -1,0 +1,9 @@
+#!/bin/bash
+
+javascript=/usr/share/code/resources/app/extensions/javascript/snippets/
+if [ ! -L $javascript/javascript.code-snippets ]; then
+    if [ -f ~/dotfiles/javascript.code-snippets ]; then
+        (sudo rm $javascript/javascript.code-snippets || true);
+        sudo ln -s ~/dotfiles/javascript.code-snippets $javascript/;
+    fi
+fi
