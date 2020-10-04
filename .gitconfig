@@ -23,6 +23,7 @@
     sw = switch
     re = restore
     last = log -10 --graph
+    files = show --pretty="" --name-only
 
 # Using meld as diff and merge tool
 [diff]
