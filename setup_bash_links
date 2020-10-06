@@ -48,5 +48,6 @@ if [ ! -L ~/setup.cfg ]; then
   ln -s ~/dotfiles/setup.cfg ~/setup.cfg;
 fi
 
-
-
+if [ ! -L ~/.inputrc ]; then
+  ln -s ~/dotfiles/.inputrc ~/.inputrc;
+fi

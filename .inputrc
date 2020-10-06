@@ -1,0 +1,3 @@
+# https://superuser.com/a/271677
+$include /etc/inputrc
+set mark-symlinked-directories on
