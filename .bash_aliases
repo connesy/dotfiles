@@ -39,6 +39,7 @@ kube_start() { kubectl exec -it "${1:-$(get_pod)}" -- bash; }
 
 # Alias to ssh into datascience vm using external IP address
 alias get_vm_ip='gcloud compute instances list | \grep datascience | while read name zone type internal external status; do echo "$external"; done'
+alias write_vm_ip='echo -e "Host datascience\n\tHostName $(get_vm_ip)\n\tUser stefan" > ~/.ssh/config'
 
 # Start lcoal MySQL server
 alias mysql_start='mysqld_safe &'
