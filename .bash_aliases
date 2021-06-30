@@ -64,3 +64,6 @@ alias bso="blinkstick --set-color off"
 alias bluetooth_fix="killall pulseaudio"
 
 alias pudb="pudb3"
+
+# Run flake8 on all files in current directory
+alias flake="flake8 . --config=/home/stefan/connectedcars/data-quality/setup.cfg"
