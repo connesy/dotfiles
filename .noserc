@@ -1,4 +1,0 @@
-[nosetests]
-with-id=1
-verbosity=2
-with-timer=1
