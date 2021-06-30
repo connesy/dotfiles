@@ -1,49 +1,22 @@
 #!/bin/bash
 
-if [ ! -L ~/.bash_aliases ]; then
-  ln -s ~/dotfiles/.bash_aliases ~/.bash_aliases;
-fi
+FILES="dotfiles/.bash_aliases
+dotfiles/.bash_extras
+dotfiles/.bash_profile
+dotfiles/.bash_setup
+private-dotfiles/.bash_cc
+dotfiles/.gitconfig
+dotfiles/.condarc
+dotfiles/.screenrc
+dotfiles/easy_extraction
+dotfiles/setup.cfg
+dotfiles/.inputrc"
 
-if [ ! -L ~/.bash_extras ]; then
-  ln -s ~/dotfiles/.bash_extras ~/.bash_extras;
-fi
-
-if [ ! -L ~/.bash_profile ]; then
-  ln -s ~/dotfiles/.bash_profile ~/.bash_profile;
-fi
-
-if [ ! -L ~/.bash_setup ]; then
-  ln -s ~/dotfiles/.bash_setup ~/.bash_setup;
-fi
-
-if [ ! -L ~/.bash_cc ]; then
-  ln -s ~/private-dotfiles/.bash_cc ~/.bash_cc;
-fi
-
-if [ ! -L ~/.gitconfig ]; then
-  ln -s ~/dotfiles/.gitconfig ~/.gitconfig;
-fi
-
-if [ ! -L ~/.condarc ]; then
-  ln -s ~/dotfiles/.condarc ~/.condarc;
-fi
-
-if [ ! -L ~/.noserc ]; then
-  ln -s ~/dotfiles/.noserc ~/.noserc;
-fi
-
-if [ ! -L ~/.screenrc ]; then
-  ln -s ~/dotfiles/.screenrc ~/.screenrc;
-fi
-
-if [ ! -L ~/easy_extraction ]; then
-  ln -s ~/dotfiles/easy_extraction ~/easy_extraction;
-fi
-
-if [ ! -L ~/setup.cfg ]; then
-  ln -s ~/dotfiles/setup.cfg ~/setup.cfg;
-fi
-
-if [ ! -L ~/.inputrc ]; then
-  ln -s ~/dotfiles/.inputrc ~/.inputrc;
-fi
+for file in $FILES;
+do
+  link="${file/*\//~/}"  # Replace folder name with "~/": ${parameter/pattern/string}
+  if [ ! -L $link ]; then
+    ln -s $file $link
+    echo "Created symlink from $file to $link"
+  fi;
+done
