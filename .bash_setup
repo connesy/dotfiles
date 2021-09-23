@@ -22,3 +22,7 @@ if [ -f ~/easy_extraction ]; then
     . ~/easy_extraction
 fi
 
+# Parse .envFile and export all env vars
+if [ -f ~/.envFile ]; then
+    export $(\grep -vE -- '^# .*|^$' ~/.envFile)
+fi
