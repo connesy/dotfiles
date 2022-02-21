@@ -39,36 +39,24 @@ if [[ hostname != "datascience" ]]; then {
     kube_start() { kubectl exec -it "${1:-$(get_pod)}" -- bash; }
 }; fi;
 
-# Alias to ssh into datascience vm using external IP address
-alias get_vm_ip='gcloud compute instances list | \grep datascience | while read name zone type internal external status; do echo "$external"; done'
-alias write_vm_ip='echo -e "Host datascience\n\tHostName $(get_vm_ip)\n\tUser stefan" > ~/.ssh/config'
-
-# Start lcoal MySQL server
-alias mysql_start='mysqld_safe &'
-
-# Remove mysql caches before running npm test
-alias npm_test='rm -r ~/connectedcars/data/mysqldata/ ~/connectedcars/data/mysqldata-context/; ( cd ~/connectedcars/data/migrations; npm test )'
-
 # Show info about the computer
 alias about="inxi -F"
-
-# Add python migration script as alias
-alias migrate="python ~/connectedcars/data-quality/src/run_table_migrations.py"
-
-# Add aliases to control blinkstick
-alias bsg="blinkstick --set-color green"
-alias bsr="blinkstick --set-color red"
-alias bso="blinkstick --set-color off"
 
 # When bluetooth headset can't connect, run this and try again
 alias bluetooth_fix="killall pulseaudio"
 
 alias pudb="pudb3"
 
-# Run flake8 on all files in current directory
-alias flake="flake8 . --config=/home/stefan/connectedcars/data-quality/setup.cfg"
-
 # Setup Z [https://github.com/rupa/z] to enable easy jumping to recent locations
 if [ -f ~/z.sh ]; then
   . ~/z.sh
 fi
+
+# Alias for kubectl select cluster
+alias kubeprod="az aks get-credentials --resource-group prod-cluster-eu-west-1-master-skunk --name prod-cluster-eu-west-1-master-skunk --subscription DSG-P-api.dansksupermarked.dk"
+alias kubeargo="az aks get-credentials --resource-group argo-prod-resources --name argo-prod-cluster --subscription DSG-P-api.dansksupermarked.dk"
+alias kubekf="az aks get-credentials -n kf-prod-cluster -g kf-prod-cluster --subscription DSG-P-api.dansksupermarked.dk"
+
+# Alias for port forwarding argo, kubeflow
+alias argoforward="kubectl -n argo port-forward deployment/argo-server 2746:2746"
+alias kfforward="kubectl -n istio-system port-forward svc/istio-ingressgateway 8080:80"
