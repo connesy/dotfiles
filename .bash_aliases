@@ -60,3 +60,6 @@ alias kubekf="az aks get-credentials -n kf-prod-cluster -g kf-prod-cluster --sub
 # Alias for port forwarding argo, kubeflow
 alias argoforward="kubectl -n argo port-forward deployment/argo-server 2746:2746"
 alias kfforward="kubectl -n istio-system port-forward svc/istio-ingressgateway 8080:80"
+
+# Alias to clear swap partition (check if RAM has enough free space with free -m)
+alias clear_swap="sudo swapoff --all && sudo swapon --all"
