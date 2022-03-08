@@ -67,3 +67,11 @@ mkcd () {
     mkdir -p "$1";
     cd "$1";
 }
+
+# Overwrite cd to invoke pipenv shell in directories with Pipfiles
+function cd {
+    builtin cd "$@"
+    if [ -f "Pipfile" ] && [ -z "$PIPENV_ACTIVE" ]; then
+        pipenv shell
+    fi
+}
