@@ -137,7 +137,8 @@ _z() {
         # if we hit enter on a completion just go there
         case "$last" in
             # completions will always start with /
-            /*) [ -z "$list" -a -d "$last" ] && builtin cd "$last" && return;;
+            #/*) [ -z "$list" -a -d "$last" ] && builtin cd "$last" && return;;
+            /*) [ -z "$list" -a -d "$last" ] && cd "$last" && return;;
         esac
 
         # no file yet
@@ -216,7 +217,8 @@ _z() {
 
         if [ "$?" -eq 0 ]; then
           if [ "$cd" ]; then
-            if [ "$echo" ]; then echo "$cd"; else builtin cd "$cd"; fi
+            #if [ "$echo" ]; then echo "$cd"; else builtin cd "$cd"; fi
+            if [ "$echo" ]; then echo "$cd"; else cd "$cd"; fi
           fi
         else
           return $?
