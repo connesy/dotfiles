@@ -47,19 +47,26 @@ alias bluetooth_fix="killall pulseaudio"
 
 alias pudb="pudb3"
 
+-# Alias to clear swap partition (check if RAM has enough free space with free -m)
+-alias clear_swap="sudo swapoff --all && sudo swapon --all"
+
 # Setup Z [https://github.com/rupa/z] to enable easy jumping to recent locations
 if [ -f ~/z.sh ]; then
   . ~/z.sh
 fi
 
-# Alias for kubectl select cluster
+# Alias for kubectl select prod cluster
 alias kubeprod="az aks get-credentials --resource-group prod-cluster-eu-west-1-master-skunk --name prod-cluster-eu-west-1-master-skunk --subscription DSG-P-api.dansksupermarked.dk"
-alias kubeargo="az aks get-credentials --resource-group argo-prod-resources --name argo-prod-cluster --subscription DSG-P-api.dansksupermarked.dk"
-alias kubekf="az aks get-credentials -n kf-prod-cluster -g kf-prod-cluster --subscription DSG-P-api.dansksupermarked.dk"
 
-# Alias for port forwarding argo, kubeflow
-alias argoforward="kubectl -n argo port-forward deployment/argo-server 2746:2746"
+# Alias for kubeflow cluster
+alias kubekf="az aks get-credentials -n kf-prod-cluster -g kf-prod-cluster --subscription DSG-P-api.dansksupermarked.dk"
 alias kfforward="kubectl -n istio-system port-forward svc/istio-ingressgateway 8080:80"
 
-# Alias to clear swap partition (check if RAM has enough free space with free -m)
-alias clear_swap="sudo swapoff --all && sudo swapon --all"
+# Alias for data jobs / argo cluster
+alias kubeargo="az aks get-credentials -n data-jobs-prod-cluster -g data-jobs-prod-cluster --subscription DSG-P-api.dansksupermarked.dk"
+alias argoforward="kubectl -n argo port-forward deployment/argo-argo-workflows-server 2746:2746"
+alias argocdforward="kubectl port-forward svc/argocd-cm-server -n argocd 8080:443"
+
+# Alias for the old argo cluster
+#alias kubeargoold="az aks get-credentials --resource-group argo-prod-resources --name argo-prod-cluster --subscription DSG-P-api.dansksupermarked.dk"
+#alias argoforwardold="kubectl -n argo port-forward deployment/argo-server 2746:2746"
