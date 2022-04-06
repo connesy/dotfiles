@@ -24,5 +24,7 @@ fi
 
 # Parse .envFile and export all env vars
 if [ -f ~/.envFile ]; then
-    export $(\grep -vE -- '^# .*|^$' ~/.envFile)
+    set -a
+    . ~/.envFile
+    set +a
 fi
