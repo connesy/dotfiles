@@ -79,3 +79,7 @@ function cd {
         pipenv shell
     fi
 }
+
+# Set VS Code as editor
+export EDITOR="$(which code)"
+export VISUAL="$EDITOR"
