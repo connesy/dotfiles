@@ -47,8 +47,8 @@ alias bluetooth_fix="killall pulseaudio"
 
 alias pudb="pudb3"
 
--# Alias to clear swap partition (check if RAM has enough free space with free -m)
--alias clear_swap="sudo swapoff --all && sudo swapon --all"
+# Alias to clear swap partition (check if RAM has enough free space with free -m)
+alias clear_swap="sudo swapoff --all && sudo swapon --all"
 
 # Setup Z [https://github.com/rupa/z] to enable easy jumping to recent locations
 if [ -f ~/z.sh ]; then
