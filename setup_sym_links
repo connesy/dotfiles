@@ -4,7 +4,6 @@ FILES="dotfiles/.bash_aliases
 dotfiles/.bash_extras
 dotfiles/.bash_profile
 dotfiles/.bash_setup
-private-dotfiles/.bash_cc
 dotfiles/.gitconfig
 dotfiles/.condarc
 dotfiles/.screenrc
