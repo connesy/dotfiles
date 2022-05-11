@@ -59,7 +59,7 @@ fi
 alias kubeprod="az aks get-credentials --resource-group prod-cluster-eu-west-1-master-skunk --name prod-cluster-eu-west-1-master-skunk --subscription DSG-P-api.dansksupermarked.dk"
 
 # Alias for kubeflow cluster
-alias kubekf="az aks get-credentials -n kf-prod-cluster -g kf-prod-cluster --subscription DSG-P-api.dansksupermarked.dk"
+alias kubekf="az aks get-credentials -n kf-prod-cluster -g kf-prod-cluster --subscription DSG-T-MLops-Kubeflow-POC"
 alias kfforward="kubectl -n istio-system port-forward svc/istio-ingressgateway 8080:80"
 
 # Alias for data jobs / argo cluster
