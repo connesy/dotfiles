@@ -2,6 +2,13 @@
 # This script runs all my personal .bash* files.
 # Used in .bashrc so as not to have to write them all when creating a new machine
 
+# Parse .envFile and export all env vars
+if [ -f ~/.envFile ]; then
+    set -a
+    . ~/.envFile
+    set +a
+fi
+
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
@@ -20,11 +27,4 @@ fi
 
 if [ -f ~/easy_extraction ]; then
     . ~/easy_extraction
-fi
-
-# Parse .envFile and export all env vars
-if [ -f ~/.envFile ]; then
-    set -a
-    . ~/.envFile
-    set +a
 fi
