@@ -70,3 +70,8 @@ alias argocdforward="kubectl port-forward svc/argocd-cm-server -n argocd 8080:44
 # Alias for the old argo cluster
 #alias kubeargoold="az aks get-credentials --resource-group argo-prod-resources --name argo-prod-cluster --subscription DSG-P-api.dansksupermarked.dk"
 #alias argoforwardold="kubectl -n argo port-forward deployment/argo-server 2746:2746"
+
+# Get the public IP of the office proxy
+alias office_proxy_ip="az vm show -d -g office-proxy-resource-group -n office-proxy --query publicIps -o tsv"
+alias write_office_proxy_port="sed -i 's:Port .*$:Port $PORT:' ~/.ssh/config"
+alias connect_office_proxy="ssh -p $PORT -i $OFFICE_MACHINE_SSH_KEY_PATH stefan@localhost"
