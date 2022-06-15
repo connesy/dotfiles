@@ -50,11 +50,23 @@ if [ "$TERM" != "dumb" ]; then
     fi
 fi
 
-# If cd'ing to a file, cd to its directory instead
-function cd() { if [ $# -ne 1 ] || [ "$1" = "-" ]; then command cd "$@"; return; fi; if [ -f "$1" ] && [ -d $(dirname "$1") ]; then command cd $(dirname "$1"); else command cd "$1"; fi; }
+function cd() {
+    # If cd'ing to a file, cd to its directory instead
+    if [ $# -ne 1 ] || [ "$1" = "-" ]; then
+        command cd "$@";
+        return;
+    fi;
+    if [ -f "$1" ] && [ -d $(dirname "$1") ]; then
+        command cd $(dirname "$1");
+    else
+        command cd "$1";
+    fi;
 
-# Set environmental variable for atom:sync-settings package
-export GIST_ID='3354e3d6197a61a06bdb7ad320bcb8ac'
+    # Overwrite cd to invoke pipenv shell in directories with Pipfiles
+    if [ -f "Pipfile" ] && [ -z "$PIPENV_ACTIVE" ]; then
+        pipenv shell;
+    fi;
+}
 
 # Convenience function to profile a python script
 profile() {
@@ -72,14 +84,6 @@ export GPG_TTY=$(tty)
 mkcd () {
     mkdir -p "$1";
     cd "$1";
-}
-
-# Overwrite cd to invoke pipenv shell in directories with Pipfiles
-function cd {
-    builtin cd "$@"
-    if [ -f "Pipfile" ] && [ -z "$PIPENV_ACTIVE" ]; then
-        pipenv shell
-    fi
 }
 
 # Set VS Code as editor
