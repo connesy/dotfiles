@@ -73,5 +73,5 @@ alias argocdforward="kubectl port-forward svc/argocd-cm-server -n argocd 8080:44
 
 # Get the public IP of the office proxy
 alias office_proxy_ip="az vm show -d -g office-proxy-resource-group -n office-proxy --query publicIps -o tsv"
-alias write_office_proxy_port="sed -i 's:Port .*$:Port $PORT:' ~/.ssh/config"
-alias connect_office_proxy="ssh -p $PORT -i $OFFICE_MACHINE_SSH_KEY_PATH stefan@localhost"
+alias write_office_proxy_port="sed -i 's:Port .*$:Port $OFFICE_PROXY_PORT:' ~/.ssh/config"
+alias connect_office_proxy="ssh -p $OFFICE_PROXY_PORT -i $OFFICE_MACHINE_SSH_KEY_PATH stefan@localhost"
