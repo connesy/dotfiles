@@ -4,6 +4,7 @@ FILES="dotfiles/.bash_aliases
 dotfiles/.bash_extras
 dotfiles/.bash_profile
 dotfiles/.bash_setup
+dotfiles/.salling_aliases
 dotfiles/.condarc
 dotfiles/.screenrc
 dotfiles/easy_extraction

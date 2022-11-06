@@ -42,24 +42,3 @@ if [ -f ~/z.sh ]; then
   . ~/z.sh
 fi
 
-# Alias for kubectl select api prod cluster
-alias kubeprodapi="az aks get-credentials --resource-group prod-cluster-eu-west-1-master-skunk --name prod-cluster-eu-west-1-master-skunk --subscription DSG-P-api.dansksupermarked.dk"
-
-# Alias for ML&AI prod / data jobs cluster cluster
-alias kubeprod="az aks get-credentials --resource-group ai-prod-resources --name team-ai-prod-cluster --subscription DSG-P-api.dansksupermarked.dk"
-alias argoforward="kubectl -n argo port-forward deployment/argo-workflows-server 2746:2746"
-alias argocdforward="kubectl port-forward svc/argocd-cm-server -n argocd 8080:443"
-
-# Alias for kubeflow cluster
-alias kubekf="az aks get-credentials -n kf-prod-cluster -g kf-prod-cluster --subscription DSG-T-MLops-Kubeflow-POC"
-alias kfforward="kubectl -n istio-system port-forward svc/istio-ingressgateway 8080:80"
-
-# Alias for the old argo cluster
-#alias kubeargoold="az aks get-credentials --resource-group argo-prod-resources --name argo-prod-cluster --subscription DSG-P-api.dansksupermarked.dk"
-#alias argoforwardold="kubectl -n argo port-forward deployment/argo-server 2746:2746"
-
-# Get the public IP of the office proxy
-alias office_proxy_ip="az vm show -d -g office-proxy-resource-group -n office-proxy --query publicIps -o tsv"
-alias write_office_proxy_port="sed -i 's:Port .*$:Port $OFFICE_PROXY_PORT:' ~/.ssh/config"
-alias connect_office_proxy="ssh -p $OFFICE_PROXY_PORT -i $OFFICE_MACHINE_SSH_KEY_PATH stefan@localhost"
-alias kill_beast_proxy="kill \$(lsof -ti ":\$OFFICE_PROXY_PORT") && echo 'Killed Beast SSH connection'"
