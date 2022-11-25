@@ -8,7 +8,6 @@ dotfiles/.salling_aliases
 dotfiles/.condarc
 dotfiles/.screenrc
 dotfiles/easy_extraction
-dotfiles/setup.cfg
 dotfiles/.inputrc"
 
 for file in $FILES;
