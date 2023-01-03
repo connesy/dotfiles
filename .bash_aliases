@@ -42,3 +42,5 @@ if [ -f ~/z.sh ]; then
   . ~/z.sh
 fi
 
+# Fix Spotify stuck in fullscreen issue
+alias spotify_fullscreen_fix="sed -i '/\b\(app.window.position\)\b/d' -- $HOME/snap/spotify/current/.config/spotify/prefs"
