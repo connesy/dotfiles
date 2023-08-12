@@ -6,6 +6,8 @@ alias ldir='ll -d */'
 # Sort by modified time, oldest first
 alias lt='ll -tr'
 
+alias gc="git clone"
+
 # bash calculator
 alias calc="bc"
 alias calculator="bc"
@@ -22,6 +24,8 @@ alias pss='ps -u $USER o pid,ppid,c,pmem,stime,tty,time,stat,cmd --sort -rss --c
 alias cp="cp -i"  # Ask before overwriting
 alias mv="mv -i"
 alias bc="bc -i"
+
+alias ca="conda activate"
 
 # https://stackoverflow.com/questions/17983068/delete-local-git-branches-after-deleting-them-on-the-remote-repo
 alias gitpurge_deleted_branches="git fetch --all -p; git branch -vv | \grep ': gone]' | awk '{ print \$1 }' | xargs -n 1 git branch -d"
@@ -44,3 +48,4 @@ fi
 
 # Fix Spotify stuck in fullscreen issue
 alias spotify_fullscreen_fix="sed -i '/\b\(app.window.position\)\b/d' -- $HOME/snap/spotify/current/.config/spotify/prefs"
+

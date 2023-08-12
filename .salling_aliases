@@ -21,3 +21,4 @@ alias office_proxy_ip="az vm show -d -g office-proxy-resource-group -n office-pr
 alias write_office_proxy_port="sed -i 's:Port .*$:Port $OFFICE_PROXY_PORT:' ~/.ssh/config"
 alias connect_office_proxy="ssh -p $OFFICE_PROXY_PORT -i $OFFICE_MACHINE_SSH_KEY_PATH stefan@localhost"
 alias kill_beast_proxy="kill \$(lsof -ti ":\$OFFICE_PROXY_PORT") && echo 'Killed Beast SSH connection'"
+

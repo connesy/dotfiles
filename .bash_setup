@@ -28,3 +28,11 @@ fi
 if [ -f ~/easy_extraction ]; then
     . ~/easy_extraction
 fi
+
+#if [ -f ~/venv.sh ]; then
+#    . ~/venv.sh
+#fi
+
+if [ -f ~/git_requirements_creator.sh ]; then
+    . ~/git_requirements_creator.sh
+fi
