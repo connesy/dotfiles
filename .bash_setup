@@ -36,3 +36,7 @@ fi
 if [ -f ~/git_requirements_creator.sh ]; then
     . ~/git_requirements_creator.sh
 fi
+
+if [ -f ~/.mojo ]; then
+    . ~/.mojo
+fi
