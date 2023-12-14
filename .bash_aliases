@@ -16,7 +16,7 @@ alias calculator="bc"
 alias d='du -sch * | sort -h'
 
 # Super grepper
-alias g="grep --exclude-dir='.*' --exclude-dir='build' --exclude='*.*save' --exclude='*.yml' -rHIn" # Ignore binary files, hidden files/directories, also ignore backups/temps/swaps, search recursively, print filenames and line numbers
+alias g="grep --exclude-dir='.*' --exclude-dir='build' --exclude='*.*save' --exclude='*.yml' -rHI" # Ignore binary files, hidden files/directories, also ignore backups/temps/swaps, search recursively, print filenames
 
 # Super PS
 alias pss='ps -u $USER o pid,ppid,c,pmem,stime,tty,time,stat,cmd --sort -rss --cols $COLUMNS | grep -vP "(sshd: |sftp-server|-bash|ps -u )"'
