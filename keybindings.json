@@ -327,5 +327,13 @@
     {
         "key": "ctrl+shift+l",
         "command": "-continue.quickTextEntry"
+    },
+    {
+        "key": "alt+m",
+        "command": "-extension.minifyJSON"
+    },
+    {
+        "key": "alt+m",
+        "command": "mojo.execInTerminal-icon"
     }
 ]
