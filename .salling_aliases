@@ -22,3 +22,7 @@ alias write_office_proxy_port="sed -i 's:Port .*$:Port $OFFICE_PROXY_PORT:' ~/.s
 alias connect_office_proxy="ssh -p $OFFICE_PROXY_PORT -i $OFFICE_MACHINE_SSH_KEY_PATH stefan@localhost"
 alias kill_beast_proxy="kill \$(lsof -ti ":\$OFFICE_PROXY_PORT") && echo 'Killed Beast SSH connection'"
 
+# Switch between azure projects
+# DSG-P-Digital Growth Center
+alias az_p_digital="az account set --subscription 2b970926-e08e-481d-83a9-93951df84600"
+alias az_p_api="az account set --subscription ec287a16-8e6b-4b85-b056-e7043f393de5"
