@@ -335,5 +335,13 @@
     {
         "key": "alt+m",
         "command": "mojo.execInTerminal-icon"
+    },
+    {
+        "key": "alt+g",
+        "command": "editor.action.inlineSuggest.trigger"
+    },
+    {
+        "key": "shift+alt+g",
+        "command": "editor.action.inlineSuggest.showNext"
     }
 ]
