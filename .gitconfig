@@ -21,6 +21,8 @@
     st = status
     sw = switch
     re = restore
+    pf = push --force-with-lease
+    rba = rebase -i --autosquash
     last = log -10 --graph
     files = show --pretty="" --name-only
 
