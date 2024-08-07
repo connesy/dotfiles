@@ -4,9 +4,18 @@
     signingkey = 4E22357764FFF8B8
 
 # General setup
+[core]
+    autocrlf = input
 [credential]
+    helper = cache
+[pull]
+    rebase = false
 [push]
     default = simple
+[commit]
+    gpgsign = true
+[gpg]
+    program = gpg2
 
 # Setup nice log output
 [log]
@@ -42,14 +51,6 @@
     trustExitCode = true
     cmd = meld "$LOCAL" "$MERGED" "$REMOTE" --output "$MERGED"
 
-[core]
-    autocrlf = input
-[commit]
-    gpgsign = true
-[gpg]
-    program = gpg2
-[pull]
-    rebase = false
 [filter "lfs"]
     process = git-lfs filter-process
     required = true
