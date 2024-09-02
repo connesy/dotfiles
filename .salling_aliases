@@ -7,6 +7,8 @@ alias kubeprodapi="az aks get-credentials --resource-group prod-cluster-eu-west-
 alias kubeprod="az aks get-credentials --resource-group ai-prod-resources --name team-ai-prod-cluster --subscription DSG-P-api.dansksupermarked.dk"
 alias argoforward="kubectl -n argo port-forward deployment/argo-workflows-server 2746:2746"
 alias argocdforward="kubectl port-forward svc/argocd-cm-server -n argocd 8080:443"
+alias kubeteamai="kubectl config use-context team-ai-prod-cluster"
+alias kubedev="kubectl config use-context api-ocp515-dev-sallinggroup-io:443/system:serviceaccount:default:team-ai-terraform"
 
 # Alias for kubeflow cluster
 alias kubekf="az aks get-credentials -n kf-prod-cluster -g kf-prod-cluster --subscription DSG-T-MLops-Kubeflow-POC"
