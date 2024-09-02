@@ -6,7 +6,9 @@ alias ldir='ll -d */'
 # Sort by modified time, oldest first
 alias lt='ll -tr'
 
+# Git aliases
 alias gc="git clone"
+alias list-tags="git tag --list | sort -V"
 
 # bash calculator
 alias calc="bc"
