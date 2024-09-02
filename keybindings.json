@@ -343,5 +343,14 @@
     {
         "key": "shift+alt+g",
         "command": "editor.action.inlineSuggest.showNext"
+    },
+    {
+        "key": "ctrl+shift+q",
+        "command": "-vsc-workspace-sidebar-focus-search",
+        "when": "sideBarVisible && focusedView == 'vsc-workspace-sidebar-webview-workspace'"
+    },
+    {
+        "key": "ctrl+shift+q",
+        "command": "workbench.action.quickTextSearch"
     }
 ]
