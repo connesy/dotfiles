@@ -28,6 +28,8 @@ alias mv="mv -i"
 alias bc="bc -i"
 
 alias ca="conda activate"
+alias cat="batcat"
+alias bat="batcat"
 
 # https://stackoverflow.com/questions/17983068/delete-local-git-branches-after-deleting-them-on-the-remote-repo
 alias gitpurge_deleted_branches="git fetch --all -p; git branch -vv | \grep ': gone]' | awk '{ print \$1 }' | xargs -n 1 git branch -d"
