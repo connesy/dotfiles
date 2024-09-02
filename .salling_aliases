@@ -31,3 +31,4 @@ alias az_p_api="az account set --subscription ec287a16-8e6b-4b85-b056-e7043f393d
 
 # VPN
 alias vpn_salling="openconnect-sso --server connect.dsg.dk/dsgac -- --useragent=AnyConnect -s 'vpn-slice 10.1.0.0/16'"
+export QTWEBENGINE\_CHROMIUM\_FLAGS="--no-sandbox"
