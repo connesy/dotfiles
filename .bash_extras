@@ -101,3 +101,7 @@ mkcd () {
 }
 
 export EDITOR="$(which nano)"
+
+battail() {
+    tail -f "$1" | bat --paging=never -l log "${@:2}"
+}
