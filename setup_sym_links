@@ -7,8 +7,9 @@ dotfiles/.bash_setup
 dotfiles/.salling_aliases
 dotfiles/.condarc
 dotfiles/.screenrc
+dotfiles/.inputrc
 dotfiles/easy_extraction
-dotfiles/.inputrc"
+dotfiles/z.sh"
 
 for file in $FILES;
 do
