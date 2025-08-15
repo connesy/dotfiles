@@ -33,6 +33,10 @@ fi
 #    . ~/venv.sh
 #fi
 
+if [ -f ~/z.sh ]; then
+    . ~/z.sh
+fi
+
 if [ -f ~/git_requirements_creator.sh ]; then
     . ~/git_requirements_creator.sh
 fi

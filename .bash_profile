@@ -5,3 +5,8 @@ stty -ixon
 if [ -f ~/.bashrc ]; then
     . ~/.bashrc
 fi
+
+. "$HOME/.cargo/env"
+
+# uv
+export PATH="/home/stefan/.local/bin:$PATH"

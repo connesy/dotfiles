@@ -105,3 +105,14 @@ export EDITOR="$(which nano)"
 battail() {
     tail -f "$1" | bat --paging=never -l log "${@:2}"
 }
+
+compile() {
+    # If there are two arguments, use them as input and output files
+    if [ $# == 2 ]; then
+        uv pip compile "$1" -o "$2" --no-annotate --no-header
+        return $?
+    fi
+
+    # If there is only one argument, compile it to stdout
+    uv pip compile "$1" --no-header
+}

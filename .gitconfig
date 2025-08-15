@@ -12,6 +12,7 @@
     rebase = false
 [push]
     default = simple
+    autoSetupRemote = true
 [commit]
     gpgsign = true
 [gpg]
@@ -30,10 +31,11 @@
     st = status
     sw = switch
     re = restore
-    pf = push --force-with-lease
+    pf = push --force-with-lease --force-if-includes
     rba = rebase -i --autosquash
     last = log -10 --graph
     files = show --pretty="" --name-only
+    alias = config --get-regexp alias
 
 # Using meld as diff and merge tool
 [diff]
